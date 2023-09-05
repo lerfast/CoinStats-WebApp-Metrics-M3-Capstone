@@ -28,53 +28,102 @@ function DetailsPage() {
             {cryptoDetails.symbol}
             )
           </h2>
-          <p>
-            Rank:
-            {cryptoDetails.rank}
-          </p>
-          <p>
-            Price:
-            {cryptoDetails.price}
-          </p>
-          <p>
-            Price (BTC):
-            {cryptoDetails.priceBtc}
-          </p>
-          <p>
-            Volume:
-            {cryptoDetails.volume}
-          </p>
-          <p>
-            Market Cap:
-            {cryptoDetails.marketCap}
-          </p>
-          <p>
-            Available Supply:
-            {cryptoDetails.availableSupply}
-          </p>
-          <p>
-            Total Supply:
-            {cryptoDetails.totalSupply}
-          </p>
-          <p>
-            Price Change (1h):
-            {cryptoDetails.priceChange1h}
-            %
-          </p>
-          <p>
-            Price Change (1d):
-            {cryptoDetails.priceChange1d}
-            %
-          </p>
-          <p>
-            Price Change (1w):
-            {cryptoDetails.priceChange1w}
-            %
-          </p>
-          <p>
-            Website:
-            <a href={cryptoDetails.websiteUrl} target="_blank" rel="noopener noreferrer">Visit</a>
-          </p>
+          <table className="table">
+            <tbody>
+              <tr>
+                <th>
+                  Rank:
+                </th>
+                <td>
+                  {cryptoDetails.rank}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Price:
+                </th>
+                <td>
+                  {cryptoDetails.price}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Price (BTC):
+                </th>
+                <td>
+                  {cryptoDetails.priceBtc}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Volume:
+                </th>
+                <td>
+                  {cryptoDetails.volume}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Market Cap:
+                </th>
+                <td>
+                  {cryptoDetails.marketCap}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Available Supply:
+                </th>
+                <td>
+                  {cryptoDetails.availableSupply}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Total Supply:
+                </th>
+                <td>
+                  {cryptoDetails.totalSupply}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Price Change (1h):
+                </th>
+                <td>
+                  {cryptoDetails.priceChange1h}
+                  %
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Price Change (1d):
+                </th>
+                <td>
+                  {cryptoDetails.priceChange1d}
+                  %
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Price Change (1w):
+                </th>
+                <td>
+                  {cryptoDetails.priceChange1w}
+                  %
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Website:
+                </th>
+                <td>
+                  <a href={cryptoDetails.websiteUrl} target="_blank" rel="noopener noreferrer">Visit</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
         </div>
       )}
     </div>

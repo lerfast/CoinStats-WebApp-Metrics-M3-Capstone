@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { fetchCryptos } from '../redux/cryptoSlice';
 import './style/HomePage.css';
 
@@ -34,7 +35,12 @@ function HomePage() {
       <div className="crypto-grid">
         {filteredCryptos.map((crypto) => (
           <div key={crypto.id} className="crypto-card">
+            <div className="arrow-container">
+              <Link to={`/details/${crypto.id}`}><BsArrowRightCircle /></Link>
+            </div>
+
             <img src={crypto.icon} alt={crypto.name} width="50" />
+
             <h2>
               {crypto.name}
               {' '}
@@ -50,7 +56,6 @@ function HomePage() {
               Price:
               {crypto.price}
             </p>
-            <Link to={`/details/${crypto.id}`}>See Details</Link>
           </div>
         ))}
       </div>
