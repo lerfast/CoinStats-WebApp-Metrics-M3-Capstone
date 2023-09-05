@@ -33,8 +33,8 @@ function HomePage() {
       </div>
 
       <div className="crypto-grid">
-        {filteredCryptos.map((crypto) => (
-          <div key={crypto.id} className="crypto-card">
+        {filteredCryptos.map((crypto, index) => (
+          <div key={crypto.id} className={`crypto-card ${index % 2 === 0 ? 'color-1' : 'color-2'}`}>
             <div className="arrow-container">
               <Link to={`/details/${crypto.id}`}><BsArrowRightCircle /></Link>
             </div>
