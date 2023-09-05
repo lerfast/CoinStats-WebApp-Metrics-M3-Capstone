@@ -7,14 +7,13 @@ import { setCoins } from '../../redux/cryptoSlice';
 import DetailsPage from '../DetailsPage';
 
 test('renders DetailsPage with crypto details', () => {
-  // Mocking state for the test
   const mockCoins = [
     {
       id: '1',
       icon: 'image_url',
       name: 'Bitcoin',
       symbol: 'BTC',
-      // ...otros datos que necesites para que el componente se renderice correctamente
+
       rank: '1',
       price: '45000',
       priceBtc: '1',
@@ -42,5 +41,4 @@ test('renders DetailsPage with crypto details', () => {
   );
 
   expect(screen.getByText('Bitcoin (BTC)')).toBeInTheDocument();
-  // Puedes agregar más expects para verificar otros detalles
 });

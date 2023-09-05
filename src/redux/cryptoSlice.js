@@ -1,8 +1,6 @@
-// slices/cryptoSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Acción asíncrona para obtener las criptomonedas
 export const fetchCryptos = createAsyncThunk('crypto/fetchCryptos', async () => {
   const response = await axios.get('https://api.coinstats.app/public/v1/coins');
   return response.data.coins;
