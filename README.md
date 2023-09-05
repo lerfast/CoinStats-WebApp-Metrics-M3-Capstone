@@ -85,7 +85,7 @@ The CoinStats is a SPA fully responsive, that shows information from the top 100
 
 🚀 Live demo of this project [here](https://cryptocoins-stats.onrender.com/)
 
-🚀 Video Info of this project [here](https://www.loom.com/share/25395352af5441a890adfc54ffc13f7c)
+🚀 Video Info of this project [here](https://www.loom.com/share/531e6a86e7d345719a9295ed576ac804)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
