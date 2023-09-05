@@ -25,8 +25,8 @@ test('renders DetailsPage with crypto details', () => {
       priceChange1h: '0.1',
       priceChange1d: '-2',
       priceChange1w: '5',
-      websiteUrl: 'https://bitcoin.org'
-    }
+      websiteUrl: 'https://bitcoin.org',
+    },
   ];
 
   store.dispatch(setCoins(mockCoins));
@@ -38,7 +38,7 @@ test('renders DetailsPage with crypto details', () => {
           <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
       </MemoryRouter>
-    </Provider>
+    </Provider>,
   );
 
   expect(screen.getByText('Bitcoin (BTC)')).toBeInTheDocument();

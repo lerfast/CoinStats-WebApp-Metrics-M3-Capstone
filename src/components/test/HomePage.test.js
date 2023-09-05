@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import {
+  render, fireEvent,
+} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import HomePage from '../HomePage';
@@ -12,7 +14,7 @@ describe('HomePage', () => {
     render(
       <Provider store={store}>
         <HomePage />
-      </Provider>
+      </Provider>,
     );
 
     // Puedes agregar expect() aquí para hacer assertions
@@ -22,14 +24,14 @@ describe('HomePage', () => {
     const { getByPlaceholderText } = render(
       <Provider store={store}>
         <HomePage />
-      </Provider>
+      </Provider>,
     );
 
     const input = getByPlaceholderText('Find Crypto....');
 
     fireEvent.change(input, { target: { value: 'Bitcoin' } });
 
-    // Debido a que estás mockeando axios, deberás simular la respuesta que esperas de la API. 
+    // Debido a que estás mockeando axios, deberás simular la respuesta que esperas de la API.
     // Aquí es donde debes ajustar para adaptarlo a tus necesidades.
     // Por ejemplo:
     // await waitFor(() => screen.getByText('Bitcoin (BTC)'));

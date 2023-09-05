@@ -7,7 +7,7 @@ test('renders NavBar with Home link', async () => {
   render(
     <Router>
       <NavBar />
-    </Router>
+    </Router>,
   );
 
   const homeLink = await screen.findByText('Home');
