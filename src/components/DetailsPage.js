@@ -1,70 +1,82 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCryptos } from '../redux/cryptoSlice';
+import './style/DetailsPage.css';
 
 function DetailsPage() {
+  const dispatch = useDispatch();
+  const cryptos = useSelector((state) => state.crypto.coins);
   const { id } = useParams();
-  const crypto = useSelector((state) => state.crypto.coins.find((coin) => coin.id === id));
+  const cryptoDetails = cryptos.find((crypto) => crypto.id === id);
 
-  if (!crypto) return <div>Coin not found!!!</div>;
+  useEffect(() => {
+    if (!cryptos.length) {
+      dispatch(fetchCryptos());
+    }
+  }, [dispatch, cryptos]);
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <img src={crypto.icon} alt={crypto.name} width="100" />
-      <h1>
-        {crypto.name}
-        {' '}
-        (
-        {crypto.symbol}
-        )
-      </h1>
-      <p>
-        Rank:
-        {crypto.rank}
-      </p>
-      <p>
-        Price:
-        {crypto.price}
-      </p>
-      <p>
-        Price (BTC):
-        {crypto.priceBtc}
-      </p>
-      <p>
-        Volume:
-        {crypto.volume}
-      </p>
-      <p>
-        Market Cap:
-        {crypto.marketCap}
-      </p>
-      <p>
-        Available Supply:
-        {crypto.availableSupply}
-      </p>
-      <p>
-        Total Supply:
-        {crypto.totalSupply}
-      </p>
-      <p>
-        Price Change (1h):
-        {crypto.priceChange1h}
-        %
-      </p>
-      <p>
-        Price Change (1d):
-        {crypto.priceChange1d}
-        %
-      </p>
-      <p>
-        Price Change (1w):
-        {crypto.priceChange1w}
-        %
-      </p>
-      <p>
-        Website:
-        <a href={crypto.websiteUrl} target="_blank" rel="noopener noreferrer">Visit</a>
-      </p>
+    <div className="details-container">
+      {cryptoDetails && (
+        <div className="details-card">
+          <img src={cryptoDetails.icon} alt={cryptoDetails.name} width="100" />
+          <h2>
+            {cryptoDetails.name}
+            {' '}
+            (
+            {cryptoDetails.symbol}
+            )
+          </h2>
+          <p>
+            Rank:
+            {cryptoDetails.rank}
+          </p>
+          <p>
+            Price:
+            {cryptoDetails.price}
+          </p>
+          <p>
+            Price (BTC):
+            {cryptoDetails.priceBtc}
+          </p>
+          <p>
+            Volume:
+            {cryptoDetails.volume}
+          </p>
+          <p>
+            Market Cap:
+            {cryptoDetails.marketCap}
+          </p>
+          <p>
+            Available Supply:
+            {cryptoDetails.availableSupply}
+          </p>
+          <p>
+            Total Supply:
+            {cryptoDetails.totalSupply}
+          </p>
+          <p>
+            Price Change (1h):
+            {cryptoDetails.priceChange1h}
+            %
+          </p>
+          <p>
+            Price Change (1d):
+            {cryptoDetails.priceChange1d}
+            %
+          </p>
+          <p>
+            Price Change (1w):
+            {cryptoDetails.priceChange1w}
+            %
+          </p>
+          <p>
+            Website:
+            <a href={cryptoDetails.websiteUrl} target="_blank" rel="noopener noreferrer">Visit</a>
+          </p>
+        </div>
+      )}
     </div>
   );
 }

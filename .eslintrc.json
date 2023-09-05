@@ -19,7 +19,8 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
-      "max-len": ["error", { "code": 120 }] // Ajusta el valor según tus preferencias
+      "max-len": ["error", { "code": 120 }],
+      "import/no-extraneous-dependencies": "off"
     },
     "overrides": [
       {
